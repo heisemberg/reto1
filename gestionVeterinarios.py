@@ -1,12 +1,7 @@
 import core
 import os
 diccCliente = {"data":[]}
-"""
-Metodo para cargar informacion de clientes:
-Si el archivo de recursos no existe lo crea de forma
-automatica con la estructura inicia del diccionario vacio
-diccCliente = {"data":[]}
-"""
+
 def LoadInfoCliente():
     global diccCliente
     if (core.checkFile("clientes.json")):

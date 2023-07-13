@@ -1,3 +1,32 @@
 {
-    "data": []
+    "data": [
+        {
+            "id": 1,
+            "nombre": "aaaaaa",
+            "tipo": "Perro",
+            "raza": "Pitbull",
+            "edad": "3"
+        },
+        {
+            "id": 2,
+            "nombre": "ff",
+            "tipo": "Gato",
+            "raza": "Persa",
+            "edad": "1"
+        },
+        {
+            "id": 3,
+            "nombre": "aaaa",
+            "tipo": "Reptil",
+            "raza": "Iguana",
+            "edad": "2"
+        },
+        {
+            "id": 4,
+            "nombre": "cc",
+            "tipo": "Gato",
+            "raza": "Persa",
+            "edad": "2"
+        }
+    ]
 }

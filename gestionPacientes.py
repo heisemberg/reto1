@@ -5,7 +5,7 @@ diccPaciente = {"data":[]}
 def LoadInfoPaciente():
     global diccPaciente
     if (core.checkFile("pacientes.json")):
-        diccPaciente = core.LoadInfo("paciente.json")
+        diccPaciente = core.LoadInfo("pacientes.json")
     else:
         core.crearInfo("pacientes.json",diccPaciente)
 
@@ -22,18 +22,19 @@ def MainMenu():
     opcion =int(input(":)_"))
     
     if (opcion == 1):
-        if diccPaciente is None:
-            id=1
+        os.system('clear')
+        if (len(diccPaciente['data'])) == 0:
+            id = 1
         else:
-            id+=1
+            id = diccPaciente['data'][-1]['id'] + 1
         
-
         tipos = ['Perro','Gato','Reptil','Ave']
         perros = ['Pitbull', 'Doberman', 'Pincher']
         gatos = ['Angora', 'Persa', 'Siames']
         reptiles = ['Iguana', 'Camaleon', 'Serpiente']
         aves = ['Loro', 'Perico', 'Canario']
 
+        
         print('+','-'*55,'+')
         print("|{:^16}{}{:^15}|".format(' ','TIPO DE MASCOTA',' '))
         print('+','-'*55,'+')
@@ -42,6 +43,7 @@ def MainMenu():
         tipo =int(input(":)_"))
         
         if (tipo == 1):
+            os.system('clear')
             print('+','-'*55,'+')
             print("|{:^16}{}{:^15}|".format(' ','RAZA O ESPECIE',' '))
             print('+','-'*55,'+')
@@ -50,6 +52,7 @@ def MainMenu():
             raza =int(input(":)_"))
             razas = perros
         elif (tipo == 2):
+            os.system('clear')
             print('+','-'*55,'+')
             print("|{:^16}{}{:^15}|".format(' ','RAZA O ESPECIE',' '))
             print('+','-'*55,'+')
@@ -58,6 +61,7 @@ def MainMenu():
             raza =int(input(":)_"))
             razas = gatos
         elif (tipo == 3):
+            os.system('clear')
             print('+','-'*55,'+')
             print("|{:^16}{}{:^15}|".format(' ','RAZA O ESPECIE',' '))
             print('+','-'*55,'+')
@@ -66,6 +70,7 @@ def MainMenu():
             raza =int(input(":)_"))
             razas = reptiles
         elif (tipo == 4):
+            os.system('clear')
             print('+','-'*55,'+')
             print("|{:^16}{}{:^15}|".format(' ','RAZA O ESPECIE',' '))
             print('+','-'*55,'+')
@@ -113,7 +118,7 @@ def MainMenu():
                 if pacSearch == item["raza"]:
                     print(f'Id paciente : {item["id"]}')
                     print(f'Nombre paciente : {item["nombre"].upper()}')
-        #os.system("pause")
+        
         
         input('Puse tecla para continuar: ')
     elif (opcion == 3):
