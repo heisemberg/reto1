@@ -2,31 +2,19 @@
     "data": [
         {
             "id": 1,
-            "nombre": "aaaaaa",
-            "tipo": "Perro",
-            "raza": "Pitbull",
-            "edad": "3"
+            "nombre": "KIRA",
+            "tipo": "PERRO",
+            "raza": "DOBERMAN",
+            "edad": "2",
+            "propietario": "DAVID"
         },
         {
             "id": 2,
-            "nombre": "ff",
-            "tipo": "Gato",
-            "raza": "Persa",
-            "edad": "1"
-        },
-        {
-            "id": 3,
-            "nombre": "aaaa",
-            "tipo": "Reptil",
-            "raza": "Iguana",
-            "edad": "2"
-        },
-        {
-            "id": 4,
-            "nombre": "cc",
-            "tipo": "Gato",
-            "raza": "Persa",
-            "edad": "2"
+            "nombre": "MISHI",
+            "tipo": "GATO",
+            "raza": "PERSA",
+            "edad": "1",
+            "propietario": "HEISEMBERG"
         }
     ]
 }

@@ -1,7 +1,8 @@
 import core
 import os
+import gestionCitas
 diccPaciente = {"data":[]}
-
+gestionCitas.
 def LoadInfoPaciente():
     global diccPaciente
     if (core.checkFile("pacientes.json")):
@@ -81,46 +82,48 @@ def MainMenu():
 
         data ={
             "id": id,
-            "nombre":input("Ingrese el Nombre del paciente :"),
-            "tipo": tipos[tipo-1],
-            "raza": razas[raza-1],
+            "nombre":input("Ingrese el Nombre del paciente :").upper(),
+            "tipo": tipos[tipo-1].upper(),
+            "raza": razas[raza-1].upper(),
             "edad":input("Ingrese la edad del paciente :"),
-            "nombre":input("Ingrese el Nombre del propietario :"),
+            "propietario":input("Ingrese el Nombre del propietario :").upper()
         }
         diccPaciente["data"].append(data)
         core.crearInfo("pacientes.json",data)
         
     elif (opcion == 2):
-        os.system("clear")
-        print('+','-'*49,'+')
-        print("|{:^16}{}{:^15}|".format(' ','BUSCADOR DE PACIENTES',' '))
-        print('+','-'*49,'+')
-        print("1. Buscar por nombre")
-        print("2. Buscar por tipo")
-        print("3. Buscar por raza")
-        print("4. Regresar gestion pacientes")
-        op =int(input(":)_"))
-        if (op == 1):
-            pacSearch = input("Ingrese el nombre del paciente a buscar:")
-            for i,item in enumerate(diccPaciente["data"]):
-                if pacSearch == item["nombre"]:
-                    print(f'Id paciente : {item["id"]}')
-                    print(f'Nombre paciente : {item["nombre"].upper()}')
-        elif (op == 2):
-            pacSearch = input("Ingrese el tipo del paciente a buscar:")
-            for i,item in enumerate(diccPaciente["data"]):
-                if pacSearch == item["tipo"]:
-                    print(f'Id paciente : {item["id"]}')
-                    print(f'Nombre paciente : {item["nombre"].upper()}')
-        elif (op == 3):
-            pacSearch = input("Ingrese la raza del paciente a buscar:")
-            for i,item in enumerate(diccPaciente["data"]):
-                if pacSearch == item["raza"]:
-                    print(f'Id paciente : {item["id"]}')
-                    print(f'Nombre paciente : {item["nombre"].upper()}')
+        search = True
+        while (search):
+            os.system("clear")
+            print('+','-'*49,'+')
+            print("|{:^16}{}{:^15}|".format(' ','BUSCADOR DE PACIENTES',' '))
+            print('+','-'*49,'+')
+            print("1. Buscar por nombre")
+            print("2. Buscar por tipo")
+            print("3. Buscar por raza")
+            print("4. Regresar gestion pacientes")
+            op =int(input(":)_"))
         
-        
-        input('Puse tecla para continuar: ')
+            if (op == 1):
+                pacSearch = input("Ingrese el nombre del paciente a buscar:").upper()
+                for i,item in enumerate(diccPaciente["data"]):
+                    if pacSearch == item["nombre"]:
+                        print(f'Id paciente : {item["id"]}')
+                        print(f'Nombre paciente : {item["nombre"].upper()}')
+            elif (op == 2):
+                pacSearch = input("Ingrese el tipo del paciente a buscar:").upper()
+                for i,item in enumerate(diccPaciente["data"]):
+                    if pacSearch == item["tipo"]:
+                        print(f'Id paciente : {item["id"]}')
+                        print(f'Nombre paciente : {item["nombre"].upper()}')
+            elif (op == 3):
+                pacSearch = input("Ingrese la raza del paciente a buscar:").upper()
+                for i,item in enumerate(diccPaciente["data"]):
+                    if pacSearch == item["raza"]:
+                        print(f'Id paciente : {item["id"]}')
+                        print(f'Nombre paciente : {item["nombre"].upper()}')
+
+            search=bool(input("para buscar de nuevo 'S', de lo contrario pulse enter para salir: "))
     elif (opcion == 3):
         pass
     elif (opcion == 4):

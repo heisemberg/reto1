@@ -4,9 +4,7 @@ import gestionPacientes
 import os
 if __name__ == "__main__":
     isActivate = True
-    dataClientes={'data':[]}
-    dataVeterinarios={'data':[]}
-    dataCitas={'data':[]}
+    
     while isActivate:
         os.system("clear")
         print('+','-'*55,'+')
@@ -21,9 +19,11 @@ if __name__ == "__main__":
             gestionPacientes.LoadInfoPaciente()
             gestionPacientes.MainMenu()
         elif (opcion == 2):
-            pass
+            gestionVeterinarios.LoadInfoveterinario()
+            gestionVeterinarios.MainMenu()
         elif (opcion == 3):
-            pass
+            gestionCitas.LoadInfoCitas()
+            gestionCitas.MainMenu()
         elif (opcion == 4):
             isActivate = False
         else:
