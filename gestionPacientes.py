@@ -1,8 +1,8 @@
 import core
 import os
-import gestionCitas
+
 diccPaciente = {"data":[]}
-gestionCitas.
+
 def LoadInfoPaciente():
     global diccPaciente
     if (core.checkFile("pacientes.json")):
@@ -86,7 +86,8 @@ def MainMenu():
             "tipo": tipos[tipo-1].upper(),
             "raza": razas[raza-1].upper(),
             "edad":input("Ingrese la edad del paciente :"),
-            "propietario":input("Ingrese el Nombre del propietario :").upper()
+            "propietario":input("Ingrese el Nombre del propietario :").upper(),
+            "citas": []
         }
         diccPaciente["data"].append(data)
         core.crearInfo("pacientes.json",data)
